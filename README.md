@@ -1,3 +1,15 @@
 # Guillermo Espinoza — Video Editor Portfolio
 
-Portafolio enfocado en edición de video, short-form, branded content, motion y storytelling.
+Portafolio estático para postulaciones de Video Editor.
+
+## Piezas incluidas
+- Showreel / presentación audiovisual
+- Talking Head / Podcast
+- Commercial / Beauty Product
+- Motion / Product Explainer
+- Short-form / Social Ad
+
+## Publicación
+El sitio no requiere build. Puede publicarse directamente en GitHub Pages, Vercel, Netlify o cualquier hosting estático.
+
+Archivo de entrada: `index.html`
