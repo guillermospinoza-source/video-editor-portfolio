@@ -46,17 +46,17 @@ button{font:inherit}
 .hero{
   min-height:calc(100vh - 72px);
   display:grid;
-  grid-template-columns:minmax(0,1.08fr) minmax(340px,.72fr);
+  grid-template-columns:minmax(0,.82fr) minmax(460px,1.18fr);
   gap:72px;
   align-items:center;
   padding-top:68px;
   padding-bottom:84px;
 }
-.hero-copy{max-width:720px}
+.hero-copy{max-width:650px}
 .hero h1{
   margin:20px 0 24px;
   max-width:760px;
-  font-size:clamp(3.6rem,6.8vw,7.2rem);
+  font-size:clamp(3.25rem,5.6vw,6rem);
   line-height:.91;
   letter-spacing:-.065em;
   font-weight:680;
@@ -79,19 +79,11 @@ button{font:inherit}
 .button.primary{padding:0 18px;background:var(--text);color:#111}
 .button.text-link{color:var(--soft);border-bottom:1px solid #555}
 .button.text-link:hover{color:#fff;border-color:#fff}
-.tool-line{
-  margin:44px 0 0;
-  padding-top:18px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
-  font-size:.78rem;
-  letter-spacing:.02em;
-}
 
-.reel{align-self:center}
+.reel{align-self:center;width:100%;max-width:560px;justify-self:end}
 .reel-head{display:flex;justify-content:space-between;margin-bottom:10px;font-size:.66rem;color:var(--muted)}
 .reel-frame{background:#000;border:1px solid var(--line);overflow:hidden}
-.reel-frame .drive-player{display:block;width:100%;aspect-ratio:9/16;border:0;background:#000}
+.reel-frame .drive-player{display:block;width:100%;height:min(70vh,760px);aspect-ratio:9/16;border:0;background:#000}
 .reel-note{margin:12px 0 0;color:var(--muted);font-size:.78rem}
 
 .work{padding:112px 0;border-top:1px solid var(--line)}
@@ -190,7 +182,7 @@ button{font:inherit}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;gap:48px;min-height:auto}
   .hero-copy{max-width:800px}
-  .reel{max-width:420px}
+  .reel{max-width:520px;justify-self:start}
   .section-title{grid-template-columns:1fr}
   .section-title .eyebrow{grid-column:auto}
   .work-grid{gap:46px 20px}
@@ -207,8 +199,8 @@ button{font:inherit}
   .hero{padding-top:54px;padding-bottom:72px}
   .hero h1{font-size:clamp(3.2rem,16vw,5.1rem)}
   .hero-actions{gap:18px;flex-wrap:wrap}
-  .tool-line{line-height:1.8}
-  .reel{max-width:100%}
+  .reel{max-width:100%;width:100%}
+  .reel-frame .drive-player{height:72vh;max-height:720px}
   .work,.capabilities,.profile{padding:76px 0}
   .section-title{gap:22px;margin-bottom:34px}
   .work-grid{grid-template-columns:1fr;gap:46px}
