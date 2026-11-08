@@ -36,9 +36,7 @@
 
       <div class="hero-video" id="showreel">
         <div class="video-frame hero-frame">
-          <video controls playsinline preload="metadata" poster="assets/posters/showreel.webp">
-            <source src="assets/videos/showreel.mp4" type="video/mp4">
-          </video>
+          <iframe class="drive-player" src="https://drive.google.com/file/d/1dz-Us0X8DEu_v0zXi2mDw3yrPbZr7YRZ/preview" title="Showreel de Guillermo Espinoza" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
         </div>
         <div class="piece-meta">
           <div>
@@ -60,7 +58,7 @@
       </div>
 
       <div class="work-grid">
-        <article class="work-card" data-video="assets/videos/podcast.mp4" data-title="Talking Head / Podcast" data-subtitle="27 s · Captions · Inserts · Composición · Ritmo">
+        <article class="work-card" data-video="https://drive.google.com/file/d/1J942D3lEalmW3_n4t9pHnLPZaefX1D9b/preview" data-title="Talking Head / Podcast" data-subtitle="27 s · Captions · Inserts · Composición · Ritmo">
           <button class="poster-button" type="button" aria-label="Reproducir Talking Head / Podcast">
             <img src="assets/posters/podcast.webp" alt="Fotograma de un podcast editado con subtítulos" loading="lazy">
             <span class="play">▶</span>
@@ -73,7 +71,7 @@
           </div>
         </article>
 
-        <article class="work-card" data-video="assets/videos/rubios.mp4" data-title="Commercial / Beauty Product" data-subtitle="45 s · Producto · Antes/después · Web · CTA">
+        <article class="work-card" data-video="https://drive.google.com/file/d/1P0r0tvyZC5SM_QJlQRL-K1SZp8tRPb7H/preview" data-title="Commercial / Beauty Product" data-subtitle="45 s · Producto · Antes/después · Web · CTA">
           <button class="poster-button" type="button" aria-label="Reproducir Commercial / Beauty Product">
             <img src="assets/posters/rubios.webp" alt="Resultado de cabello rubio en una pieza comercial" loading="lazy">
             <span class="play">▶</span>
@@ -86,7 +84,7 @@
           </div>
         </article>
 
-        <article class="work-card" data-video="assets/videos/motion-explainer.mp4" data-title="Motion / Product Explainer" data-subtitle="67 s · Tipografía · UI · Datos · Producto">
+        <article class="work-card" data-video="https://drive.google.com/file/d/19-58iA1dmtzGE7JX6Yiqzlz7yCKcBRFs/preview" data-title="Motion / Product Explainer" data-subtitle="67 s · Tipografía · UI · Datos · Producto">
           <button class="poster-button" type="button" aria-label="Reproducir Motion / Product Explainer">
             <img src="assets/posters/motion-explainer.webp" alt="Pieza motion con producto y texto comercial" loading="lazy">
             <span class="play">▶</span>
@@ -99,7 +97,7 @@
           </div>
         </article>
 
-        <article class="work-card" data-video="assets/videos/short-form.mp4" data-title="Short-form / Social Ad" data-subtitle="12 s · Hook · Cortes rápidos · Texto · Producto">
+        <article class="work-card" data-video="https://drive.google.com/file/d/1jrx1lhKNlYD3E1SXnuEy80rY8KGofqQ7/preview" data-title="Short-form / Social Ad" data-subtitle="12 s · Hook · Cortes rápidos · Texto · Producto">
           <button class="poster-button" type="button" aria-label="Reproducir Short-form / Social Ad">
             <img src="assets/posters/short-form.webp" alt="Pieza corta de producto con texto en pantalla" loading="lazy">
             <span class="play">▶</span>
@@ -158,7 +156,7 @@
   <dialog class="video-modal" id="videoModal" aria-labelledby="modalTitle">
     <div class="modal-shell">
       <button class="modal-close" type="button" aria-label="Cerrar">×</button>
-      <div class="modal-video-wrap"><video id="modalVideo" controls playsinline preload="metadata"></video></div>
+      <div class="modal-video-wrap"><iframe id="modalVideo" class="drive-player modal-drive-player" title="Video del portafolio" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
       <div class="modal-copy"><p class="kicker" id="modalSubtitle"></p><h2 id="modalTitle"></h2></div>
     </div>
   </dialog>
