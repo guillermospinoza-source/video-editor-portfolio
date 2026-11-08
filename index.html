@@ -6,12 +6,36 @@
   <meta name="description" content="Guillermo Espinoza — Video Editor. Short-form, branded content, social ads y talking head.">
   <meta name="theme-color" content="#090909">
   <title>Guillermo Espinoza — Video Editor</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="Guillermo Espinoza — Video Editor">
+  <meta property="og:description" content="Edición para contenido que tiene que rendir: short-form, branded content, social ads y talking head.">
+  <meta property="og:url" content="https://guillermospinoza-source.github.io/video-editor-portfolio/">
+  <meta property="og:image" content="https://guillermospinoza-source.github.io/video-editor-portfolio/assets/posters/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="preload" as="image" href="assets/posters/showreel.webp" fetchpriority="high">
+  <link rel="stylesheet" href="assets/styles.css?v=6">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z" fill="currentColor"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 19V5L7.5 9.5H4Z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#work">Saltar al trabajo</a>
+
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Inicio">
+    <a class="brand" href="#top" aria-label="Guillermo Espinoza, inicio">
       <strong>Guillermo Espinoza</strong>
       <span>Video Editor</span>
     </a>
@@ -25,12 +49,12 @@
   <main id="top">
     <section class="hero section-shell">
       <div class="hero-copy">
-        <p class="eyebrow">SHORT-FORM · BRANDED CONTENT · SOCIAL ADS</p>
+        <p class="eyebrow">Short-form · Branded content · Social ads</p>
         <h1>Edición para contenido que tiene que rendir.</h1>
         <p class="lede">Trabajo ritmo, captions, motion y sonido para que una pieza se sienta clara, actual y lista para publicar.</p>
         <div class="hero-actions">
           <a class="button primary" href="#work">Ver trabajos</a>
-          <a class="button secondary" href="https://wa.me/524424536626" target="_blank" rel="noopener">Contactar</a>
+          <a class="button secondary" href="https://wa.me/524424536626" target="_blank" rel="noopener">Escríbeme por WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="hero-foot">
           <span>Querétaro, MX</span>
@@ -39,69 +63,73 @@
         </div>
       </div>
 
-      <div class="reel" aria-label="Video Editor Reel">
-        <div class="reel-meta">
-          <span>VIDEO EDITOR REEL</span>
-          <span>00:48</span>
-        </div>
-        <div class="reel-frame">
-          <iframe class="drive-player" src="https://drive.google.com/file/d/1BJdUxpVsI5pd7828V2i42Z5PZ1JiNOBr/preview" title="Video Editor Reel de Guillermo Espinoza" allow="autoplay; fullscreen" allowfullscreen loading="eager"></iframe>
+      <figure class="reel">
+        <figcaption class="reel-meta">
+          <span>Video Editor Reel</span>
+          <span class="duration" data-duration-for="reelVideo">00:48</span>
+        </figcaption>
+        <div class="reel-frame" data-state="idle">
+          <video id="reelVideo" src="assets/videos/showreel.mp4" poster="assets/posters/showreel.webp" playsinline preload="metadata" aria-label="Video Editor Reel de Guillermo Espinoza"></video>
+          <button class="reel-cta" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+            <span>Ver reel</span>
+          </button>
         </div>
         <p class="reel-note">Montaje · subtítulos · motion · composición · sound design</p>
-      </div>
+      </figure>
     </section>
 
     <section class="work section-shell" id="work">
       <div class="work-intro">
-        <p class="eyebrow">SELECTED WORK</p>
+        <p class="eyebrow">Selected work</p>
         <h2>Trabajo seleccionado.</h2>
         <p>Cuatro piezas, cuatro necesidades distintas.</p>
       </div>
 
       <div class="work-grid">
-        <article class="work-card" data-video="https://drive.google.com/file/d/1J942D3lEalmW3_n4t9pHnLPZaefX1D9b/preview" data-title="Podcast / Talking Head" data-subtitle="00:27 · Captions · Inserts · Sound design">
+        <article class="work-card" data-video="assets/videos/podcast.mp4" data-poster="assets/posters/podcast.webp" data-title="Podcast / Talking Head" data-subtitle="00:27 · Captions · Inserts · Sound design">
           <button class="poster-button" type="button" aria-label="Reproducir Podcast / Talking Head">
-            <img src="assets/posters/podcast.webp" alt="Fotograma de podcast editado" loading="lazy">
-            <span class="play">▶</span>
+            <img src="assets/posters/podcast.webp" alt="" width="960" height="600" loading="lazy" decoding="async">
+            <span class="play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
           </button>
           <div class="card-copy">
-            <div class="card-meta"><span>01 / PODCAST</span><span>00:27</span></div>
+            <div class="card-meta"><span>01 / Podcast</span><span>00:27</span></div>
             <h3>Talking head con ritmo de marca.</h3>
             <p>Captions, inserts y cambios visuales sin tapar la conversación.</p>
           </div>
         </article>
 
-        <article class="work-card" data-video="https://drive.google.com/file/d/1P0r0tvyZC5SM_QJlQRL-K1SZp8tRPb7H/preview" data-title="Beauty Product Ad" data-subtitle="00:45 · Producto · Antes/después · CTA">
+        <article class="work-card" data-video="assets/videos/rubios.mp4" data-poster="assets/posters/rubios.webp" data-title="Beauty Product Ad" data-subtitle="00:45 · Producto · Antes/después · CTA">
           <button class="poster-button" type="button" aria-label="Reproducir Beauty Product Ad">
-            <img src="assets/posters/rubios.webp" alt="Resultado de cabello rubio en una pieza comercial" loading="lazy">
-            <span class="play">▶</span>
+            <img src="assets/posters/rubios.webp" alt="" width="960" height="600" loading="lazy" decoding="async">
+            <span class="play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
           </button>
           <div class="card-copy">
-            <div class="card-meta"><span>02 / COMMERCIAL</span><span>00:45</span></div>
+            <div class="card-meta"><span>02 / Commercial</span><span>00:45</span></div>
             <h3>Resultado, producto y cierre comercial.</h3>
             <p>Prueba visual, producto, web y CTA en una sola narrativa.</p>
           </div>
         </article>
 
-        <article class="work-card" data-video="https://drive.google.com/file/d/19-58iA1dmtzGE7JX6Yiqzlz7yCKcBRFs/preview" data-title="Motion / Product Explainer" data-subtitle="01:07 · Motion · UI · Tipografía">
+        <article class="work-card" data-video="assets/videos/motion-explainer.mp4" data-poster="assets/posters/motion-explainer.webp" data-title="Motion / Product Explainer" data-subtitle="01:07 · Motion · UI · Tipografía">
           <button class="poster-button" type="button" aria-label="Reproducir Motion / Product Explainer">
-            <img src="assets/posters/motion-explainer.webp" alt="Pieza motion con producto e interfaz" loading="lazy">
-            <span class="play">▶</span>
+            <img src="assets/posters/motion-explainer.webp" alt="" width="960" height="600" loading="lazy" decoding="async">
+            <span class="play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
           </button>
           <div class="card-copy">
-            <div class="card-meta"><span>03 / MOTION</span><span>01:07</span></div>
+            <div class="card-meta"><span>03 / Motion</span><span>01:07</span></div>
             <h3>Producto, interfaz e información.</h3>
             <p>Motion y tipografía para explicar sin convertirlo en una presentación estática.</p>
           </div>
         </article>
 
-        <article class="work-card" data-video="https://drive.google.com/file/d/1jrx1lhKNlYD3E1SXnuEy80rY8KGofqQ7/preview" data-title="Short-form / Social Ad" data-subtitle="00:12 · Hook · Cortes rápidos · Producto">
+        <article class="work-card" data-video="assets/videos/short-form.mp4" data-poster="assets/posters/short-form.webp" data-title="Short-form / Social Ad" data-subtitle="00:12 · Hook · Cortes rápidos · Producto">
           <button class="poster-button" type="button" aria-label="Reproducir Short-form / Social Ad">
-            <img src="assets/posters/short-form.webp" alt="Pieza corta de producto para redes sociales" loading="lazy">
-            <span class="play">▶</span>
+            <img src="assets/posters/short-form.webp" alt="" width="960" height="600" loading="lazy" decoding="async">
+            <span class="play" aria-hidden="true"><svg class="icon"><use href="#i-play"/></svg></span>
           </button>
           <div class="card-copy">
-            <div class="card-meta"><span>04 / SHORT-FORM</span><span>00:12</span></div>
+            <div class="card-meta"><span>04 / Short-form</span><span>00:12</span></div>
             <h3>Hook rápido con material real.</h3>
             <p>Cortes y jerarquía visual para sostener una pieza breve de producto.</p>
           </div>
@@ -111,7 +139,7 @@
 
     <section class="profile section-shell" id="profile">
       <div class="profile-title">
-        <p class="eyebrow">PROFILE</p>
+        <p class="eyebrow">Profile</p>
         <h2>Guillermo Espinoza.</h2>
       </div>
       <div class="profile-copy">
@@ -122,12 +150,12 @@
   </main>
 
   <footer class="footer section-shell" id="contact">
-    <p class="eyebrow">CONTACT</p>
+    <p class="eyebrow">Contact</p>
     <div class="footer-grid">
       <h2>¿Hablamos?</h2>
       <div class="contact-links">
-        <a href="mailto:guillermospinoza@gmail.com">guillermospinoza@gmail.com <span>↗</span></a>
-        <a href="https://wa.me/524424536626" target="_blank" rel="noopener">WhatsApp <span>↗</span></a>
+        <a href="mailto:guillermospinoza@gmail.com?subject=Proyecto%20de%20edici%C3%B3n%20de%20video">guillermospinoza@gmail.com <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="https://wa.me/524424536626" target="_blank" rel="noopener">WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
     <p class="footer-note">Guillermo Espinoza · Video Editor · Querétaro, México</p>
@@ -135,12 +163,16 @@
 
   <dialog class="video-modal" id="videoModal" aria-labelledby="modalTitle">
     <div class="modal-shell">
-      <button class="modal-close" type="button" aria-label="Cerrar">×</button>
-      <div class="modal-video-wrap"><iframe id="modalVideo" class="drive-player modal-drive-player" title="Video del portafolio" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+      <button class="modal-close" type="button" aria-label="Cerrar video">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+      <div class="modal-video-wrap">
+        <video id="modalVideo" playsinline controls preload="none"></video>
+      </div>
       <div class="modal-copy"><p class="kicker" id="modalSubtitle"></p><h2 id="modalTitle"></h2></div>
     </div>
   </dialog>
 
-  <script src="assets/app.js?v=5"></script>
+  <script src="assets/app.js?v=6"></script>
 </body>
 </html>
