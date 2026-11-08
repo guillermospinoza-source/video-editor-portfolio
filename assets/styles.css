@@ -20,12 +20,14 @@
   --muted:var(--gray-9);
   --line:var(--gray-5);
 
-  --font-sans:"Geist","Helvetica Neue",Arial,ui-sans-serif,system-ui,sans-serif;
-  --font-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --font-sans:"Barlow","Helvetica Neue",Arial,ui-sans-serif,system-ui,sans-serif;
+  --font-display:"Barlow Semi Condensed","Arial Narrow",var(--font-sans);
+  --font-label:var(--font-sans);
+  --accent:#6c7ed2;
   --weight-regular:400;
   --weight-medium:500;
   --weight-semibold:600;
-  --weight-display:640;
+  --weight-display:800;
 
   --ease-out:cubic-bezier(.23,1,.32,1);       /* ease-out-quint */
   --ease-in-out:cubic-bezier(.645,.045,.355,1); /* ease-in-out-cubic */
@@ -88,8 +90,8 @@ p{text-wrap:pretty}
   box-shadow:0 var(--hairline) 0 var(--line);
 }
 .brand{display:flex;align-items:baseline;gap:12px;min-height:44px;align-items:center;text-decoration:none}
-.brand strong{font-size:.92rem;font-weight:var(--weight-semibold);letter-spacing:-.02em}
-.brand span{font:var(--weight-medium) .7rem/1 var(--font-mono);color:var(--muted);text-transform:uppercase;letter-spacing:.09em}
+.brand strong{font-family:var(--font-display);font-size:1.08rem;font-weight:var(--weight-display);text-transform:uppercase;letter-spacing:.02em}
+.brand span{font:var(--weight-semibold) .7rem/1 var(--font-label);color:var(--muted);text-transform:uppercase;letter-spacing:.24em}
 .topbar nav{display:flex;gap:8px;margin-right:-12px}
 .topbar nav a{
   display:inline-flex;align-items:center;min-height:44px;padding:0 12px;
@@ -99,10 +101,10 @@ p{text-wrap:pretty}
 
 /* ---------- Tipografía utilitaria ---------- */
 .eyebrow,.kicker,.card-meta,.reel-meta{
-  font-family:var(--font-mono);
-  font-weight:var(--weight-medium);
+  font-family:var(--font-label);
+  font-weight:var(--weight-semibold);
   text-transform:uppercase;
-  letter-spacing:.1em;
+  letter-spacing:.2em;
   font-variant-numeric:tabular-nums;
 }
 .eyebrow{margin:0;font-size:.72rem;color:var(--muted)}
@@ -119,11 +121,17 @@ p{text-wrap:pretty}
 }
 .hero-copy{max-width:590px}
 .hero h1{
-  margin:20px 0 24px;
-  font-size:clamp(3.6rem,5.6vw,6.2rem);
-  line-height:.95;
-  letter-spacing:-.055em;
+  margin:20px 0 28px;
+  font-family:var(--font-display);
+  font-size:clamp(3.6rem,5.8vw,6.4rem);
+  line-height:.92;
+  letter-spacing:.005em;
+  text-transform:uppercase;
   font-weight:var(--weight-display);
+}
+.hero h1::after{
+  content:"";display:block;width:64px;height:2px;margin-top:26px;
+  background:var(--accent);
 }
 .lede{
   max-width:540px;
@@ -210,9 +218,11 @@ p{text-wrap:pretty}
 .work-intro .eyebrow{grid-column:1/-1}
 .work-intro h2,.profile h2,.footer h2{
   margin:0;
-  font-size:clamp(2.6rem,4.4vw,4.8rem);
-  line-height:.98;
-  letter-spacing:-.05em;
+  font-family:var(--font-display);
+  font-size:clamp(2.6rem,4.6vw,5rem);
+  line-height:.94;
+  letter-spacing:.005em;
+  text-transform:uppercase;
   font-weight:var(--weight-display);
 }
 .work-intro>p:last-child{margin:0;color:var(--muted);font-size:.9rem}
@@ -241,7 +251,7 @@ p{text-wrap:pretty}
 
 .card-copy{padding-top:18px}
 .card-meta{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.7rem}
-.card-copy h3{margin:10px 0 7px;font-size:1.4rem;line-height:1.12;letter-spacing:-.025em;font-weight:var(--weight-semibold)}
+.card-copy h3{margin:10px 0 8px;font-family:var(--font-display);font-size:1.6rem;line-height:1.02;letter-spacing:.01em;text-transform:uppercase;font-weight:700}
 .card-copy p{margin:0;max-width:520px;color:var(--muted);font-size:.9rem}
 
 /* ---------- Perfil ---------- */
@@ -316,7 +326,7 @@ p{text-wrap:pretty}
 }
 .modal-copy{padding:14px 4px 4px}
 .modal-copy .kicker{margin:0;color:var(--muted);font-size:.7rem}
-.modal-copy h2{margin:6px 0 0;font-size:1.2rem;font-weight:var(--weight-semibold);letter-spacing:-.02em}
+.modal-copy h2{margin:6px 0 0;font-family:var(--font-display);font-size:1.4rem;font-weight:700;letter-spacing:.01em;text-transform:uppercase}
 
 /* ---------- Hover solo en dispositivos con puntero ---------- */
 @media (hover:hover) and (pointer:fine){
