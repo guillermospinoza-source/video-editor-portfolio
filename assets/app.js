@@ -77,3 +77,25 @@ function closeModal(){
 closeButton.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 modal.addEventListener('cancel', e => { e.preventDefault(); closeModal(); });
+
+/* ---------- Entrada y aparición al hacer scroll ---------- */
+requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.remove('is-loading')));
+
+const revealItems = document.querySelectorAll('[data-reveal]');
+if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+  revealItems.forEach(el => el.classList.add('is-in'));
+} else {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  revealItems.forEach(el => io.observe(el));
+}
+
+// Escalonado de las tarjetas de trabajo
+document.querySelectorAll('.work-card').forEach((card, i) => {
+  card.style.setProperty('--delay', `${(i % 2) * 90}ms`);
+});
