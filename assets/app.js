@@ -5,22 +5,32 @@ function formatTime(seconds){
   return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
 }
 
-/* ---------- Reel del hero ---------- */
-const reelFrame = document.querySelector('.reel-frame');
+/* ---------- Videos en línea (reel y presentación) ---------- */
+const inlineVideos = [...document.querySelectorAll('.reel-frame video')];
 const reel = document.getElementById('reelVideo');
-const reelCta = document.querySelector('.reel-cta');
-const reelDuration = document.querySelector('[data-duration-for="reelVideo"]');
 
-reel.addEventListener('loadedmetadata', () => {
-  if (reelDuration && Number.isFinite(reel.duration)) reelDuration.textContent = formatTime(reel.duration);
-});
+document.querySelectorAll('.reel-frame').forEach(frame => {
+  const video = frame.querySelector('video');
+  const cta = frame.querySelector('.reel-cta');
+  const duration = document.querySelector(`[data-duration-for="${video.id}"]`);
 
-// La portada (último fotograma) se queda visible hasta que el visitante da play.
-reelCta.addEventListener('click', () => {
-  reel.controls = true;
-  reelFrame.dataset.state = 'playing';
-  reel.play().catch(() => {});
-  reel.focus({ preventScroll: true });
+  video.addEventListener('loadedmetadata', () => {
+    if (duration && Number.isFinite(video.duration)) duration.textContent = formatTime(video.duration);
+  });
+
+  // La portada se queda visible hasta que el visitante da play.
+  cta.addEventListener('click', () => {
+    inlineVideos.forEach(v => { if (v !== video) v.pause(); });
+    video.controls = true;
+    frame.dataset.state = 'playing';
+    video.play().catch(() => {});
+    video.focus({ preventScroll: true });
+  });
+
+  // Solo un video sonando a la vez.
+  video.addEventListener('play', () => {
+    inlineVideos.forEach(v => { if (v !== video) v.pause(); });
+  });
 });
 
 /* ---------- Modal de trabajos ---------- */
@@ -35,7 +45,7 @@ document.querySelectorAll('.work-card').forEach(card => {
   const trigger = card.querySelector('.poster-button');
   trigger.addEventListener('click', () => {
     lastTrigger = trigger;
-    reel.pause();
+    inlineVideos.forEach(v => v.pause());
     player.poster = card.dataset.poster;
     player.src = card.dataset.video;
     title.textContent = card.dataset.title;

@@ -254,6 +254,35 @@ p{text-wrap:pretty}
 .card-copy h3{margin:10px 0 8px;font-family:var(--font-display);font-size:1.6rem;line-height:1.02;letter-spacing:.01em;text-transform:uppercase;font-weight:700}
 .card-copy p{margin:0;max-width:520px;color:var(--muted);font-size:.9rem}
 
+/* ---------- Conóceme ---------- */
+.about{
+  padding:106px 0;
+  border-top:var(--hairline) solid var(--line);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:80px;
+  align-items:center;
+}
+.about-copy{max-width:560px}
+.about-copy .eyebrow{margin-bottom:18px}
+.about h2{
+  margin:0;
+  font-family:var(--font-display);
+  font-size:clamp(2.6rem,4.6vw,5rem);
+  line-height:.94;letter-spacing:.005em;
+  text-transform:uppercase;font-weight:var(--weight-display);
+}
+.about-lede{margin:24px 0 0;color:var(--soft);font-size:1.14rem;line-height:1.65}
+.about-list{list-style:none;margin:32px 0 0;padding:0;display:grid}
+.about-list li{
+  display:grid;grid-template-columns:44px 1fr;align-items:baseline;
+  padding:14px 0;
+  box-shadow:0 calc(-1 * var(--hairline)) 0 var(--line);
+  color:var(--soft);font-size:.95rem;
+}
+.about-list span{color:var(--muted);font:var(--weight-semibold) .7rem/1 var(--font-label);letter-spacing:.2em;font-variant-numeric:tabular-nums}
+.about-video{--reel-h:min(70svh,680px)}
+
 /* ---------- Perfil ---------- */
 .profile{
   padding:106px 0;
@@ -348,6 +377,8 @@ p{text-wrap:pretty}
   .work-intro{grid-template-columns:1fr}
   .work-intro .eyebrow{grid-column:auto}
   .profile{grid-template-columns:1fr;gap:36px}
+  .about{grid-template-columns:1fr;gap:48px}
+  .about-video{--reel-h:min(80svh,760px);justify-self:start}
   .footer-grid{grid-template-columns:1fr}
   .contact-links{max-width:480px}
 }
@@ -356,13 +387,16 @@ p{text-wrap:pretty}
   .section-shell{width:min(var(--max),calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right)))}
   .topbar{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
   .brand span{display:none}
-  .topbar nav{gap:0}
-  .topbar nav a:nth-child(2){display:none}
+  .topbar nav{gap:0;margin-right:-8px}
+  .topbar nav a{padding:0 8px}
+  .brand strong{white-space:nowrap;font-size:1rem}
+  .topbar nav a:nth-child(1){display:none}
   .hero{padding-top:44px;padding-bottom:64px}
   .hero h1{font-size:clamp(3rem,14.5vw,4.7rem)}
   .hero-foot .available{margin-left:0;width:100%}
   .reel{width:100%;justify-self:stretch}
-  .work,.profile{padding:72px 0}
+  .work,.profile,.about{padding:72px 0}
+  .about-video{width:100%;justify-self:stretch}
   .work-grid{grid-template-columns:1fr;gap:48px}
   .work-intro{margin-bottom:30px}
   .poster-button img{aspect-ratio:16/11}

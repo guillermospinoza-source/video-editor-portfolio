@@ -3,7 +3,8 @@
 Portafolio estático para postulaciones de Video Editor.
 
 ## Piezas incluidas
-- Showreel / presentación audiovisual
+- Showreel (edición con IA generativa)
+- Presentación personal: "Conóceme / Así trabajo"
 - Talking Head / Podcast
 - Commercial / Beauty Product
 - Motion / Product Explainer
